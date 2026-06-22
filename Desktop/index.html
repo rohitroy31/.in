@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Kumar Roy | Premium Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+            color: #fff
+        }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0;
+            background: linear-gradient(90deg, #ff4d5a, #7c3aed);
+            z-index: 9999
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(15px);
+            z-index: 1000
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff4d5a, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px
+        }
+
+        .profile {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #ff4d5a, #7c3aed);
+            margin-bottom: 20px;
+            animation: float 4s infinite
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-12px)
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem
+        }
+
+        .hero p {
+            opacity: .85;
+            max-width: 700px
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #ff4d5a, #7c3aed);
+            color: #fff;
+            text-decoration: none
+        }
+
+        section {
+            padding: 80px 20px
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff758f
+        }
+
+        .card,
+        .timeline li {
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px
+        }
+
+        .timeline {
+            list-style: none;
+            display: grid;
+            gap: 15px
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, .05)
+        }
+
+        .socials a {
+            margin: 0 10px;
+            color: #ff758f
+        }
+
+        @media(max-width:768px) {
+            nav ul {
+                gap: 10px;
+                font-size: .9rem
+            }
+
+            .hero h1 {
+                font-size: 2rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <header>
+        <div class="logo">Rohit Kumar Roy</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="profile">
+            <img src="roh.jpeg" alt="Profile">
+        </div>
+        <h1>Rohit Kumar Roy</h1>
+        <p id="typing"></p>
+        <a href="#about" class="btn">Explore Portfolio</a>
+    </section>
+
+    <section id="about">
+        <div class="container card">
+            <h2>About Me</h2>
+            <p>I am a Class 12 student and JEE aspirant passionate about Physics, Chemistry, Mathematics, coding, and
+                technology. My goal is to pursue engineering and build innovative projects.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Subjects</h2>
+            <div class="skills">
+                <div class="card">Physics</div>
+                <div class="card">Chemistry</div>
+                <div class="card">Mathematics</div>
+                <div class="card">Problem Solving</div>
+                <div class="card">Logical Thinking</div>
+                <div class="card">HTML • CSS • JavaScript</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <h2>Achievements</h2>
+            <ul class="timeline">
+                <li>📘 Advanced PCM practice and learning</li>
+                <li>💻 Built coding projects and websites</li>
+                <li>🎯 Preparing for JEE Main & Advanced</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container card" style="text-align:center">
+            <h2>Contact</h2>
+            <p>Email: rohitroy31012010@gmail.com</p>
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2026 Rohit Kumar Roy | Premium Portfolio</footer>
+
+    <script>
+        const text = "Class 12 Student • JEE Aspirant • Web Developer";
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 70);
+            }
+        }
+        type();
+
+        window.addEventListener("scroll", () => {
+            let win = document.documentElement.scrollTop;
+            let h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.querySelector(".progress").style.width = (win / h) * 100 + "%";
+        });
+    </script>
+</body>
+
+</html>
