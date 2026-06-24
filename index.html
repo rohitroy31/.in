@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Kumar Roy | Premium Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+            color: #fff;
+            overflow-x: hidden
+        }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0;
+            background: linear-gradient(90deg, #ff4d5a, #7c3aed);
+            z-index: 9999
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(15px);
+            z-index: 1000
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff4d5a, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 1001
+        }
+
+        /* Hamburger Menu Icon */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1001
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease
+        }
+
+        nav a:hover {
+            color: #ff758f
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px
+        }
+
+        .profile {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #ff4d5a, #7c3aed);
+            margin-bottom: 20px;
+            animation: float 4s infinite
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-12px)
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem
+        }
+
+        .hero p {
+            opacity: .85;
+            max-width: 700px;
+            min-height: 24px
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #ff4d5a, #7c3aed);
+            color: #fff;
+            text-decoration: none;
+            transition: transform 0.3s ease
+        }
+
+        .btn:hover {
+            transform: translateY(-3px)
+        }
+
+        section {
+            padding: 80px 20px
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff758f
+        }
+
+        .card,
+        .timeline li {
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            transition: transform 0.3s ease
+        }
+
+        .card:hover {
+            transform: translateY(-5px)
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px
+        }
+
+        .timeline {
+            list-style: none;
+            display: grid;
+            gap: 15px
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, .05)
+        }
+
+        .socials a {
+            margin: 0 10px;
+            color: #ff758f;
+            text-decoration: none
+        }
+
+        /* Mobile Responsiveness & Menu Logic */
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 2rem
+            }
+
+            .menu-toggle {
+                display: flex
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background: rgba(15, 23, 42, 0.95);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+                transition: right 0.4s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+            }
+
+            nav ul.active {
+                right: 0
+            }
+
+            nav ul li a {
+                font-size: 1.2rem
+            }
+
+            /* Hamburger Animation Classes */
+            .menu-toggle.is-active .bar:nth-child(1) {
+                transform: translateY(9px) rotate(45deg)
+            }
+
+            .menu-toggle.is-active .bar:nth-child(2) {
+                opacity: 0
+            }
+
+            .menu-toggle.is-active .bar:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress"></div>
+
+    <header>
+        <div class="logo">Rohit Kumar Roy</div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="profile">
+            <img src="roh.jpeg" alt="Profile">
+        </div>
+        <h1>Rohit Kumar Roy</h1>
+        <p id="typing"></p>
+        <a href="#about" class="btn">Explore Portfolio</a>
+    </section>
+
+    <section id="about">
+        <div class="container card">
+            <h2>About Me</h2>
+            <p>I am a Class 12 student and JEE aspirant passionate about Physics, Chemistry, Mathematics, coding, and
+                technology. My goal is to pursue engineering and build innovative projects.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Subjects</h2>
+            <div class="skills">
+                <div class="card" style="text-align: center;">Physics</div>
+                <div class="card" style="text-align: center;">Chemistry</div>
+                <div class="card" style="text-align: center;">Mathematics</div>
+                <div class="card" style="text-align: center;">Problem Solving</div>
+                <div class="card" style="text-align: center;">Logical Thinking</div>
+                <div class="card" style="text-align: center;">HTML • CSS • JS</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <h2>Achievements</h2>
+            <ul class="timeline">
+                <li>📘 Advanced PCM practice and learning</li>
+                <li>💻 Built coding projects and websites</li>
+                <li>🎯 Preparing for JEE Main & Advanced</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container card" style="text-align:center">
+            <h2>Contact</h2>
+            <p>Email: rohitroy31012010@gmail.com</p>
+            <br>
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2026 Rohit Kumar Roy | Premium Portfolio</footer>
+
+    <script>
+        // Typing Effect
+        const text = "Class 12 Student • JEE Aspirant • Web Developer";
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 70);
+            }
+        }
+        type();
+
+        // Scroll Progress Bar
+        window.addEventListener("scroll", () => {
+            let win = document.documentElement.scrollTop;
+            let h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.querySelector(".progress").style.width = (win / h) * 100 + "%";
+        });
+
+        // Mobile Menu Functionality
+        const menuToggle = document.querySelector('#mobile-menu');
+        const navLinks = document.querySelector('#nav-links');
+        const navItems = document.querySelectorAll('#nav-links li a');
+
+        // Toggle menu on click
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                menuToggle.classList.remove('is-active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
